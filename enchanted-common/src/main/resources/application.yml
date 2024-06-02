@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /enchanted
+  port: 7878
+
+spring:
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/enchanted
+    username: root
+    password: root
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+    publisher-confirm-type: correlated
+    publisher-returns: true
+
+  main:
+    allow-bean-definition-overriding: true
