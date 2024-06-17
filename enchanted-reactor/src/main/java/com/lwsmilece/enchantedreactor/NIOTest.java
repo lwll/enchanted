@@ -33,6 +33,7 @@ public class NIOTest {
                 SelectionKey selectionKey = keyIterator.next();
 
                 if (selectionKey.isAcceptable()) {
+
                     // 处理接收事件
                     ServerSocketChannel channel = (ServerSocketChannel)selectionKey.channel();
                     SocketChannel socketChannel = channel.accept();
@@ -58,6 +59,5 @@ public class NIOTest {
                 keyIterator.remove();
             }
         }
-
     }
 }

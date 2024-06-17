@@ -1,11 +1,14 @@
 package com.lwsmilece.enchantedreactor.singleReatorSingleThread;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.SocketChannel;
 
+@Slf4j
 public class Handler implements Runnable {
 
     private final SocketChannel socketChannel;
@@ -29,8 +32,16 @@ public class Handler implements Runnable {
     }
 
     @Override
-    public void run()  {
-
+    public void run() {
+        try {
+            if (state == READING) {
+                read();
+            } else if (state == SENDING) {
+                send();
+            }
+        } catch (IOException e) {
+           log.error("handler处理过程中异常:{}", e.getMessage());
+        }
     }
 
     private void read() throws IOException {
