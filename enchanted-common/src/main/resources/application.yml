@@ -4,11 +4,18 @@ server:
   port: 7878
 
 spring:
+  banner:
+    # 自定义banner文件路径
+    location: classpath:banner.txt
 
   datasource:
-    url: jdbc:mysql://localhost:3306/enchanted
-    username: root
-    password: root
+    url: jdbc:mysql://10.165.78.7:20303/kpmp_ultimate_xqy4?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+    username: local_kpmp_mthk
+    password: Ro9^8Vi$^H^u
+#    url: jdbc:mysql://localhost:3306/enchanted
+#    username: root
+#    password: root
+
 
   rabbitmq:
     host: 127.0.0.1
@@ -22,3 +29,4 @@ spring:
 
   main:
     allow-bean-definition-overriding: true
+    banner-mode: off
