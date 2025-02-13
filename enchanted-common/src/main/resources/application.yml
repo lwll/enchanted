@@ -8,6 +8,11 @@ spring:
     # 自定义banner文件路径
     location: classpath:banner.txt
 
+  redis:
+    port: 6379
+    host: 10.72.3.30
+    password:
+
   datasource:
     url: jdbc:mysql://10.165.78.7:20303/kpmp_ultimate_xqy4?characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
     username: local_kpmp_mthk
@@ -26,6 +31,7 @@ spring:
 
     publisher-confirm-type: correlated
     publisher-returns: true
+
 
   main:
     allow-bean-definition-overriding: true

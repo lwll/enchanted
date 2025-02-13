@@ -1,6 +1,7 @@
 package com.lwsmilence.enchanted.common;
 
 import com.lwsmilence.enchanted.common.aop.UserService;
+import com.lwsmilence.enchanted.common.redis.RedissonUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
